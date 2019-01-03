@@ -5,6 +5,7 @@
     <classes>
       <class name="page.LoginPage">
         <methods>
+          <include name="close"/>
           <include name="adicionarProposta"/>
         </methods>
       </class> <!-- page.LoginPage -->
