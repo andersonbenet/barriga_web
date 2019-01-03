@@ -44,9 +44,11 @@ public class LoginPage {
 		WebElement novaProposta = wait.until(ExpectedConditions.visibilityOf(btnNovaProposta));
 		novaProposta.click();
 		
-		Thread.sleep(9000);
-		WebElement txt_cpfPick = driver.findElement(By.id("BtnPickCPF"));
-		txt_cpfPick.click();
+		WebDriverWait waitbtn = new WebDriverWait(driver, 60);
+		waitbtn.until(ExpectedConditions.presenceOfElementLocated(By.id("BtnPickCPF"))).click();
+		
+		//WebElement txt_cpfPick = driver.findElement(By.id("BtnPickCPF"));
+		//txt_cpfPick.click();
 		
 		Thread.sleep(9000);
 		String cpf = cliente;
@@ -106,7 +108,7 @@ public class LoginPage {
 		
 	}
 	
-	@AfterMethod
+	//@AfterMethod
 	public void close() throws InterruptedException {
 		Thread.sleep(8000);
 		encerrarAplicacao();
